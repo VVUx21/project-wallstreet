@@ -33,7 +33,7 @@ function CountUp({
   }, [end, trigger]);
 
   return (
-    <span className="text-xl md:text-4xl">
+    <span className="text-xl md:text-4xl text-white">
       {count.toLocaleString() + suffix}
     </span>
   );
@@ -72,7 +72,7 @@ function About() {
   return (
     <div id="About" ref={aboutRef} className="bg-black">
       <div className="text-[#0064E0] text-6xl font-poppins flex justify-center p-10 font-bold">About Us</div>
-      <div className="p-8  font-[poppins] text-xl  flex justify-center  lg:text-center">
+      <div className="p-8 font-[poppins] text-xl flex justify-center text-white lg:text-center">
         Entrepreneurship Cell, NIT Rourkela, established in 2007 under the Technical Society of SAC, aims to foster innovation, incubation, and entrepreneurship among students. It promotes entrepreneurial traits and supports budding entrepreneurs in achieving their goals. Key initiatives include the National Entrepreneurship Summit, Arthayan, and year-round weekend activities. These events encourage an entrepreneurial culture and assist students in pursuing their ventures. ECell strives to nurture talents and empower future entrepreneurs.
       </div>
 

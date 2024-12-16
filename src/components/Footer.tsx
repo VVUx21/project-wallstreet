@@ -29,16 +29,16 @@ function Footer() {
           <div className="mt-6 flex flex-col items-center">
             <h1 className="font-bold text-xl sm:text-2xl mb-4">Contact us</h1>
             <div className="numbers">
-            <p className="font-medium text-base sm:text-lg">
+            <p className="font-medium text-base sm:text-lg text-white">
               8092336833 &nbsp; Amarpreet Singh
             </p>
-            <p className="font-medium text-base sm:text-lg">
+            <p className="font-medium text-base sm:text-lg text-white">
               7499156661 &nbsp; Aditya Chauhan
             </p>
             </div>
             <a
               href="mailto:nitrkl.ecell@gmail.com"
-              className="font-medium text-base sm:text-lg underline block mt-4"
+              className="font-medium text-base sm:text-lg underline block mt-4 text-white"
             >
             work@ecellnitrkl.in
             </a>
@@ -47,16 +47,16 @@ function Footer() {
 
         {/* Navigation Section */}
         <div className="w-full sm:w-1/3 hidden sm:block text-center py-6 mt-6 ">
-          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white">
             <a onClick={() => handleMenuItemClick("About")}>About us</a>
           </div>
-          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white">
             <a onClick={() => handleMenuItemClick("Speakers")}>Speaker</a>
           </div>
-          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+          <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white">
             <a onClick={() => handleMenuItemClick("Sponsors")}>Sponsors</a>
           </div>
-          <div className="text-base sm:text-lg font-bold cursor-pointer">
+          <div className="text-base sm:text-lg font-bold cursor-pointer text-white">
             <a onClick={() => handleMenuItemClick("Parteners")}>
               Our Partners
             </a>
@@ -66,34 +66,34 @@ function Footer() {
         <div className="mobilefooter flex sm:hidden justify-between items-center">
           <div className="w-2/3 sm:w-1/3 py-3">
               <div className="sm:mt-6 flex flex-col items-center">
-                <h1 className="font-bold text-lg sm:text-2xl mb-4">Contact us</h1>
+                <h1 className="font-bold text-lg sm:text-2xl mb-4 text-white">Contact us</h1>
                 <div className="numbers">
-                <p className="font-medium text-sm sm:text-lg">
+                <p className="font-medium text-sm sm:text-lg text-white">
                   8092336833 &nbsp; Amarpreet Singh
                 </p>
-                <p className="font-medium text-sm sm:text-lg">
+                <p className="font-medium text-sm sm:text-lg text-white">
                   7499156661 &nbsp; Aditya Chauhan
                 </p>
                 </div>
                 <a
                   href="mailto:nitrkl.ecell@gmail.com"
-                  className="font-medium text-sm sm:text-lg underline block mt-4"
+                  className="font-medium text-sm sm:text-lg underline block mt-4 text-white"
                 >
                   work@ecellnitrkl.in
                 </a>
               </div>
           </div>
           <div className="w-1/3 sm:w-1/3 text-center py-6 sm:mt-6">
-            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white">
               <a onClick={() => handleMenuItemClick("About")}>About us</a>
             </div>
-            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white ">
               <a onClick={() => handleMenuItemClick("Speakers")}>Speaker</a>
             </div>
-            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer">
+            <div className="text-base sm:text-lg font-bold mb-1 cursor-pointer text-white">
               <a onClick={() => handleMenuItemClick("Sponsors")}>Sponsors</a>
             </div>
-            <div className="text-base sm:text-lg font-bold cursor-pointer">
+            <div className="text-base sm:text-lg font-bold cursor-pointer text-white">
               <a onClick={() => handleMenuItemClick("Parteners")}>
                 Our Partners
               </a>
@@ -102,7 +102,7 @@ function Footer() {
       </div>
       </div>
       {/* Footer Text */}
-      <div className="bg-black h-6 w-full text-center flex items-center justify-center">
+      <div className="bg-black h-6 w-full text-center text-white flex items-center justify-center">
         Made with 🩵 by WEBWIZ
       </div>
     </>
