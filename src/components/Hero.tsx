@@ -12,7 +12,9 @@ function Hero() {
     const targetSection = document.getElementById(sectionId);
     targetSection?.scrollIntoView({ behavior: "smooth" });
   };
-
+  const closeNavbar = () => {
+    setIsMenuOpen(false);
+  };
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -48,37 +50,38 @@ function Hero() {
             alt="logo"
             width={75}
             height={75}
+            className="lg:h-[90px] lg:w-[100px]"
           />
 
           {/* Navbar Links for Desktop */}
           <div className="hidden md:flex md:items-center md:gap-4 font-bold">
             <a
               onClick={() => handleMenuItemClick("About")}
-              className="block px-4 py-2 mt-2 text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
+              className="block px-4 py-2 mt-2 lg:text-lg text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
             >
               ABOUT
             </a>
             <a
               onClick={() => handleMenuItemClick("Events")}
-              className="block px-4 py-2 mt-2 text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
+              className="block px-4 py-2 mt-2 lg:text-lg text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
             >
               EVENTS
             </a>
             <a
               onClick={() => handleMenuItemClick("Speakers")}
-              className="block px-4 py-2 mt-2 text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
+              className="block px-4 py-2 mt-2 lg:text-lg text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
             >
               SPEAKERS
             </a>
             <a
               onClick={() => handleMenuItemClick("Team")}
-              className="block px-4 py-2 mt-2 text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
+              className="block px-4 py-2 mt-2 lg:text-lg text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
             >
               OUR TEAM
             </a>
             <a
               onClick={() => handleMenuItemClick("Contact")}
-              className="block px-4 py-2 mt-2 text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
+              className="block px-4 py-2 mt-2 lg:text-lg text-sm text-white transition duration-300 md:mt-0 hover:text-[#0064E0] cursor-pointer"
             >
               CONTACT
             </a>
@@ -165,7 +168,12 @@ function Hero() {
           </ul>
         </div>
       </div>
-
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-10 bg-black bg-opacity-50"
+          onClick={closeNavbar}
+        />
+      )}
       {/* Hero Section */}
 
       <div

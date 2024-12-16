@@ -32,3 +32,16 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes horizontal-bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Adjust distance as needed */
+  }
+}
+
+.animate-horizontal-bounce {
+  animation: horizontal-bounce 1s infinite;
+}

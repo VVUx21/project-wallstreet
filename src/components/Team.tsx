@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import { OurTeam } from '../Data/TeamData'
+import { OurTeam } from '../Data/teamData'
 
 function Team() {
   return (
-    <div id='Team'>
-       <div className="flex flex-col justify-center items-center mt-8 font-poppins">
+    <div id='Team' className='bg-black'>
+        <div className="flex flex-col justify-center items-center mt-8 font-poppins">
             <div className="container max-w-7xl justify-center items-center px-4">
 
             <div className="flex flex-wrap justify-center items-center text-center mb-16">
@@ -22,7 +22,7 @@ function Team() {
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center">
-                  { OurTeam.map((item: any) => (
+                { OurTeam.map((item: any) => (
                     <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4" key={item.id}>
                         <div className="flex flex-col justify-center items-center bg-white">
                             
@@ -36,10 +36,7 @@ function Team() {
                                     layout='fixed'
                                 />
                                 </div>
-
-                         
                             <div className="text-center mt-4">
-                               
                                 <h1 className="text-gray-900 text-xl font-extrabold mb-1">
                                     {item.name}
                                 </h1>
@@ -54,12 +51,9 @@ function Team() {
                                         <i className="mdi mdi-linkedin text-indigo-500 mx-auto "></i>
                                     </a>
 
-                                   
                                     <a href={`mailto:${item.gmail}`} className="flex rounded-full hover:bg-blue-50 h-10 w-10">
                                         <i className="mdi mdi-gmail text-blue-300 mx-auto "></i>
                                     </a>
-
-                                 
                                     <a href={item.instagram} className="flex rounded-full hover:bg-orange-50 h-10 w-10">
                                         <i className="mdi mdi-instagram text-orange-400 mx-auto"></i>
                                     </a>

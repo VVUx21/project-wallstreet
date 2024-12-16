@@ -3,18 +3,17 @@ import Image from 'next/image'
 import { sponsorData } from '../Data/SponsorData'
 function Sponsors() {
   return (
-    <div className='pb-[4rem]' id='Sponsors'>
+    <div className='pb-[4rem] bg-black' id='Sponsors'>
 
 
   <div className="relative font-inter antialiased">
-      <div className="text-center text-5xl font-bold mt-[6rem] text-[#0064E0] font-poppins">
+      <div className="text-center text-5xl font-bold text-[#0064E0] font-poppins">
        SPONSORS
       </div>
 
 <main className="relative h-full flex flex-col justify-center overflow-hidden">
     <div className="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
         <div className="text-center">
-
             
             <div
                 x-data="{}"

@@ -2,7 +2,9 @@
 
 import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 interface Speaker {
   name: string
@@ -59,11 +61,47 @@ const speakers: Speaker[] = [
     title: "AK Mohanty",
     image: "/Speaker_Assets/Card ak.png",
     image2: "/Speaker_Assets/ak.png"
-  }
+  },
+  {
+    name: "Investor",
+    title: "Puru Modani",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295844/Card_opzljj.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294808/bibin_babu-removebg-preview_enhanced_kfbb6q.png"
+  },
+  {
+    name: "Investor",
+    title: "Pranav Shandilya",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295844/Card_1_wi2ahf.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294809/bibin_babu-removebg-preview_enhanced_1_mpme6b.png"
+  },
+  {
+    name: "Investor",
+    title: "Chiranjibi Samal",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295843/Card_5_keago5.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294808/bibin_babu-removebg-preview_enhanced_2_bsrkbk.png" 
+  },
+  {
+    name: "Investor",
+    title: "Avelo Roy",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295843/Card_3_hsgxkv.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294808/bibin_babu-removebg-preview_enhanced_3_cw9xmi.png"  
+  },
+  {
+    name: "Investor",
+    title: "Arijit Bhattacharya",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295843/Card_4_lhuaro.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294809/bibin_babu-removebg-preview_enhanced_4_v3hpz4.png" 
+  },
+  {
+    name: "Investor",
+    title: "Amit Singhal",
+    image: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733295844/Card_2_je0ncu.svg",
+    image2: "https://res.cloudinary.com/dgtdkqfsx/image/upload/v1733294808/bibin_babu-removebg-preview_enhanced_5_wuzmxh.png"
+  },
 ]
 
 export default function SpeakerCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ playOnInit: true, delay: 3000 })])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -74,26 +112,45 @@ export default function SpeakerCarousel() {
   }, [emblaApi])
 
   return (
-  <div id='Speakers' className='px-5 lg:px-28 mx-auto'>
+  <div id='Speakers' className='px-5 pt-10 bg-black'>
   <div className=" w-full min-h-screen bg-black relative">
-  <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] max-w-4xl w-full p-4">
+    <h1 className='flex justify-center items-center'>
+      <span className="text-[#0064E0] text-5xl font-bold text-center ">SPEAKERS &amp; INVESTORS</span>
+    </h1>
+    <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] lg:max-w-6xl max-w-4xl w-full p-4">
     <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex">
         {speakers.map((speaker, index) => (
           <div key={index} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-4">
             <div className="relative overflow-hidden rounded-3xl">
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3.5/4] overflow-hidden">
                 <div>
                 <img
                   src={speaker.image}
                   alt={speaker.name}
                   className="absolute w-full h-full object-fill"
                 />
-                <img
-                  src={speaker.image2}
-                  alt={""}
-                  className="absolute w-full h-full object-cover grayscale hover:grayscale-0 hover:cursor-pointer transition-all duration-300"
-                />
+                {
+                  speaker.name === "Speaker"? (
+                    <Image
+                      src={speaker.image2}
+                      alt={speaker.name}
+                      layout="responsive"
+                      width={100}
+                      height={100}
+                      quality={90}
+                      className='absolute w-full h-full object-cover grayscale hover:grayscale-0 hover:cursor-pointer transition-all duration-300'
+                    />
+                  ):(
+                    <Image
+                      src={speaker.image2}
+                      alt={speaker.name}
+                      width={200}
+                      height={200}
+                      className='absolute bottom-0 right-0 sm:h-[260px] sm:w-[260px] lg:h-[300px] lg:w-[300px] grayscale hover:grayscale-0 hover:cursor-pointer transition-all duration-300'
+                    />
+                  )
+                }
                 </div>
                 <div className="absolute z-10 p-6 flex flex-col">
                   <span className="text-blue-600 text-[17px] font-medium">

@@ -2,29 +2,41 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-function CountUp({ end, trigger }: { end: number; trigger: boolean }) {
+function CountUp({
+  end,
+  trigger,
+  suffix = "",
+}: {
+  end: number;
+  trigger: boolean;
+  suffix?: string;
+}) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!trigger) return;
 
-    setCount(0); // Reset the count each time trigger is true
+    setCount(0); 
     let current = 0;
-    const increment = Math.ceil(end / 50);
+    const increment = Math.ceil(end / 50); 
     const interval = setInterval(() => {
       current += increment;
       if (current >= end) {
-        setCount(end);
+        setCount(end); 
         clearInterval(interval);
       } else {
         setCount(current);
       }
-    }, 30);
+    }, 30); // Adjust animation speed here
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup on component unmount
   }, [end, trigger]);
 
-  return <span className="text-xl md:text-4xl">{count.toLocaleString()}</span>;
+  return (
+    <span className="text-xl md:text-4xl">
+      {count.toLocaleString() + suffix}
+    </span>
+  );
 }
 
 function About() {
@@ -37,9 +49,10 @@ function About() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTriggerCount(true); // Trigger animation
-          } else {
-            setTriggerCount(false); // Reset to ensure re-trigger
-          }
+          } 
+          // else {
+          //   setTriggerCount(false); // Reset to ensure re-trigger
+          // }
         });
       },
       { threshold: 0.5 } // Trigger when 50% of the component is visible
@@ -57,7 +70,7 @@ function About() {
   }, []);
 
   return (
-    <div id="About" ref={aboutRef}>
+    <div id="About" ref={aboutRef} className="bg-black">
       <div className="text-[#0064E0] text-6xl font-poppins flex justify-center p-10 font-bold">About Us</div>
       <div className="p-8  font-[poppins] text-xl  flex justify-center  lg:text-center">
         Entrepreneurship Cell, NIT Rourkela, established in 2007 under the Technical Society of SAC, aims to foster innovation, incubation, and entrepreneurship among students. It promotes entrepreneurial traits and supports budding entrepreneurs in achieving their goals. Key initiatives include the National Entrepreneurship Summit, Arthayan, and year-round weekend activities. These events encourage an entrepreneurial culture and assist students in pursuing their ventures. ECell strives to nurture talents and empower future entrepreneurs.
@@ -73,7 +86,7 @@ function About() {
               height={200}
               className="mx-auto"
             />
-            <CountUp end={1000} trigger={triggerCount} />
+            <CountUp end={8000} trigger={triggerCount} suffix="+" />
           </div>
           <span className="block text-[#0064E0] sm:text-4xl text-xl md:text-4xl mt-4 font-bold">STUDENTS</span>
         </div>
@@ -86,7 +99,7 @@ function About() {
               height={200}
               className="mx-auto"
             />
-            <CountUp end={20000} trigger={triggerCount} />
+            <CountUp end={50} trigger={triggerCount} suffix="+" />
           </div>
           <span className="block text-[#0064E0] sm:text-4xl text-xl md:text-4xl mt-4 font-bold">SPEAKERS</span>
         </div>
@@ -99,7 +112,7 @@ function About() {
               height={200}
               className="mx-auto"
             />
-            <CountUp end={50000} trigger={triggerCount} />
+            <CountUp end={150} trigger={triggerCount} suffix="+" />
           </div>
           <span className="block text-[#0064E0] sm:text-4xl text-xl md:text-4xl mt-4 font-bold">STARTUPS</span>
         </div>
@@ -112,11 +125,11 @@ function About() {
               height={200}
               className="mx-auto"
             />
-            <CountUp end={100000} trigger={triggerCount} />
-          </div>
+            <CountUp end={100} trigger={triggerCount} suffix="+"/>
           <span className="block text-[#0064E0] sm:text-4xl text-xl md:text-4xl mt-4 font-bold">INVESTORS</span>
         </div>
       </div>
+    </div>
     </div>
   );
 }
